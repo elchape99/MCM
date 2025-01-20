@@ -29,7 +29,7 @@ function [theta,v] = ComputeInverseAngleAxis(R)
             % Check matrix R to see if it is proper: det(R) = 1
             if det(R) >= 1-(4*10^(-4)) && det(R) <= 1+(4*10^(-4)) 
                 % Compute the angle of rotation
-                theta = acos((trace(R)-1)/2)
+                theta = acos((trace(R)-1)/2);
                 
                 % Calculate eigenvalues and eigenvectors of R %check if the correct eigenvalue is v or -v
                 v1 = -v;
@@ -39,7 +39,8 @@ function [theta,v] = ComputeInverseAngleAxis(R)
                     R = A;
                 else
                     R = A1;
-                [V,D] = eig(R) %V = eigenvectors, D = eigenvalues
+                end 
+                [V,D] = eig(R); %V = eigenvectors, D = eigenvalues
                 % Now I need to find the eigenvalue = 1, and this
                 % eigenvalues is associated to the h eigenvector. For
                 % definitions h(axes of rotation) is the eighenvectors with
@@ -69,7 +70,7 @@ function [theta,v] = ComputeInverseAngleAxis(R)
                     theta = theta;
                     v = -v;
                 end                
-              else
+            else
               error('DETERMINANT OF THE INPUT MATRIX IS NOT 1')
             end
         else
