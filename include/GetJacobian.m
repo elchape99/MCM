@@ -30,6 +30,7 @@ for i = 1:numberOfLinks
 
         
         J(:, i) = [b_ki; b_ki_irn];
+        
     elseif jointType(i) == 1
         ki = [0;0;1]; % axis of joint i
         b_irn = bTe(1:3, 4, numberOfLinks) - bTe(1:3, 4, i); % vector from i to end-effector

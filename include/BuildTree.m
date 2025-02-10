@@ -11,7 +11,7 @@ function [iTj] = BuildTree()
 link_idx = 1;
 iTj(1,1,link_idx) =  1  ; iTj(1,2,link_idx) =  0  ; iTj(1,3,link_idx) =  0  ; iTj(1,4,link_idx) =  0   ;
 iTj(2,1,link_idx) =  0  ; iTj(2,2,link_idx) =  1  ; iTj(2,3,link_idx) =  0  ; iTj(2,4,link_idx) =  0   ;
-iTj(3,1,link_idx) =  0  ; iTj(3,2,link_idx) =  0  ; iTj(3,3,link_idx) =  1  ; iTj(3,4,link_idx) =  0 ;
+iTj(3,1,link_idx) =  0  ; iTj(3,2,link_idx) =  0  ; iTj(3,3,link_idx) =  1  ; iTj(3,4,link_idx) =  0   ;
 iTj(4,1,link_idx) =  0  ; iTj(4,2,link_idx) =  0  ; iTj(4,3,link_idx) =  0  ; iTj(4,4,link_idx) =  1   ;
 
 % ------------------------- 1T2 ------------------------------%
@@ -55,5 +55,36 @@ iTj(1,1,link_idx) =  0  ; iTj(1,2,link_idx) =  0  ; iTj(1,3,link_idx) =  1  ; iT
 iTj(2,1,link_idx) =  0  ; iTj(2,2,link_idx) =  1  ; iTj(2,3,link_idx) =  0  ; iTj(2,4,link_idx) =  0  ;
 iTj(3,1,link_idx) = -1  ; iTj(3,2,link_idx) =  0  ; iTj(3,3,link_idx) =  0  ; iTj(3,4,link_idx) =  0  ;
 iTj(4,1,link_idx) =  0  ; iTj(4,2,link_idx) =  0  ; iTj(4,3,link_idx) =  0  ; iTj(4,4,link_idx) =  1  ;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% part for the Phantom Robot
+% Consider the phantom robot as a 3-link 
+% Consider the first link as the base link
+% 
+% ------------------------- 0T1 ------------------------------%
+link_idx = 1;
+iTj(1,1,link_idx) =  1  ; iTj(1,2,link_idx) =  0  ; iTj(1,3,link_idx) =  0  ; iTj(1,4,link_idx) =  0   ;
+iTj(2,1,link_idx) =  0  ; iTj(2,2,link_idx) =  1  ; iTj(2,3,link_idx) =  0  ; iTj(2,4,link_idx) =  0   ;
+iTj(3,1,link_idx) =  0  ; iTj(3,2,link_idx) =  0  ; iTj(3,3,link_idx) =  1  ; iTj(3,4,link_idx) =  0   ;
+iTj(4,1,link_idx) =  0  ; iTj(4,2,link_idx) =  0  ; iTj(4,3,link_idx) =  0  ; iTj(4,4,link_idx) =  1   ;
+
+% ------------------------- 1T2 ------------------------------%
+link_idx = 2;
+iTj(1,1,link_idx) =  -1  ; iTj(1,2,link_idx) =  0  ; iTj(1,3,link_idx) =  0  ; iTj(1,4,link_idx) =  0  ;
+iTj(2,1,link_idx) =   0  ; iTj(2,2,link_idx) =  0  ; iTj(2,3,link_idx) =  1  ; iTj(2,4,link_idx) =  0  ;
+iTj(3,1,link_idx) =   0  ; iTj(3,2,link_idx) =  1  ; iTj(3,3,link_idx) =  0  ; iTj(3,4,link_idx) =  273  ;
+iTj(4,1,link_idx) =   0  ; iTj(4,2,link_idx) =  0  ; iTj(4,3,link_idx) =  0  ; iTj(4,4,link_idx) =  1  ;
+
+% ------------------------- 2T3 ------------------------------%
+link_idx = 3;
+iTj(1,1,link_idx) =  0  ; iTj(1,2,link_idx) =  0  ; iTj(1,3,link_idx) =  1  ; iTj(1,4,link_idx) =  431.5  ;
+iTj(2,1,link_idx) =  0  ; iTj(2,2,link_idx) =  1  ; iTj(2,3,link_idx) =  0  ; iTj(2,4,link_idx) =  0  ;
+iTj(3,1,link_idx) = -1  ; iTj(3,2,link_idx) =  0  ; iTj(3,3,link_idx) =  0  ; iTj(3,4,link_idx) =  0  ;
+iTj(4,1,link_idx) =  0  ; iTj(4,2,link_idx) =  0  ; iTj(4,3,link_idx) =  0  ; iTj(4,4,link_idx) =  1  ;
+
+
+
+
+
 end
 
